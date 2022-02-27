@@ -1,0 +1,37 @@
+{
+  "name": "demo",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "serve": "parcel src/index.html",
+    "build": "parcel build src/index.html",
+    "lint": "yarn lint:code",
+    "lint:code": "eslint --ext ts,tsx src",
+    "test": "jest --verbose"
+  },
+  "alias": {
+    "spite-core": "./src/core/index.ts",
+    "spite-math": "./src/math/index.ts",
+    "spite-render": "./src/render/index.ts",
+    "spite-shaders": "./src/shaders/index.ts"
+  },
+  "devDependencies": {
+    "@parcel/transformer-glsl": "^2.3.2",
+    "@types/jest": "^27.4.1",
+    "@types/node": "^14.6.0",
+    "@typescript-eslint/eslint-plugin": "^3.10.1",
+    "@typescript-eslint/parser": "^3.10.1",
+    "eslint": "^7.7.0",
+    "eslint-config-airbnb-base": "^14.2.0",
+    "eslint-config-prettier": "^6.11.0",
+    "eslint-import-resolver-typescript": "^2.5.0",
+    "eslint-plugin-import": "^2.22.0",
+    "eslint-plugin-prettier": "^3.1.4",
+    "jest": "^27.5.1",
+    "parcel-bundler": "^1.12.4",
+    "prettier": "^2.1.1",
+    "ts-jest": "^27.1.3",
+    "typescript": "^4.0.2"
+  }
+}

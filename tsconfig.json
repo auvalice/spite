@@ -1,0 +1,23 @@
+{
+  "compilerOptions": {
+    "outDir": "./dist/",
+    "sourceMap": true,
+    "strict": true,
+    "noImplicitReturns": true,
+    "noImplicitAny": true,
+    "module": "es6",
+    "moduleResolution": "node",
+    "target": "es5",
+    "allowJs": true,
+    "baseUrl": "src",
+    "esModuleInterop": true,
+    "paths": {
+      "@/*": ["./*"],
+      "spite-core": ["./core/index.ts"],
+      "spite-math": ["./math/index.ts"],
+      "spite-render": ["./render/index.ts"],
+      "spite-shaders": ["./shaders/index.ts"]
+    }
+  },
+  "include": ["./**/*"]
+}
