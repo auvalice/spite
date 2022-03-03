@@ -1,14 +1,32 @@
+import { start } from 'repl';
+import { Scene } from '.';
+import { Globals } from './globals';
+
 export class Spite {
-  init() {
-    canvas = document.getElementById('canvas') as HTMLCanvasElement;
-    const context = canvas.getContext('webgl2');
-    if (!context) {
-      throw new Error('Can not get canvas context');
-    }
-    gl = context;
+  scene: Scene | undefined;
+
+  running = true;
+
+  setStartScene(scene: Scene) {
+    this.scene = scene;
   }
 
-  start() {}
+  _init() {
+    Globals.setContext();
+  }
 
-  update(dt: number) {}
+  start() {
+    this._init();
+    window.requestAnimationFrame((delta) => this._update(this, delta));
+  }
+
+  private _update(self: this, dt: number) {
+    dt = dt / 1000;
+    if (!self.scene) {
+      throw new Error('No scene to update');
+    }
+    self.scene.update(dt);
+
+    if (this.running) window.requestAnimationFrame((delta) => self._update(self, delta));
+  }
 }

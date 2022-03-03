@@ -91,6 +91,10 @@ export class vec3 extends vec2 {
     super(x, y);
   }
 
+  static get zero(): vec3 {
+    return new vec3(0, 0, 0);
+  }
+
   static get one(): vec3 {
     return new vec3(1, 1, 1);
   }

@@ -102,5 +102,3 @@ describe('vec2', () => {
     expect(a['z' as any]).toBeUndefined();
   });
 });
-
-describe('vec4', () => {});
